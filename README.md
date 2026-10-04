@@ -17,6 +17,6 @@ If you are developing a production application, we recommend using TypeScript wi
 
 ## Deploying to GitHub Pages
 
-Push to the `main` branch to build and deploy the site with GitHub Actions. In the repository, open **Settings → Pages** and set **Build and deployment → Source** to **GitHub Actions**. The deployed project site is `https://ajeetyadav00.github.io/portfolio/`.
+Push to the `main` branch to build and deploy the site with GitHub Actions. In the repository, open **Settings → Pages** and set **Build and deployment → Source** to **GitHub Actions**. The deployed project site is `https://ajeetyadav00.github.io/Portfolio/`.
 
 The portfolio uses React Router's `HashRouter` for section navigation, so routes work on GitHub Pages without server-side route configuration (for example, `/#/projects`).
