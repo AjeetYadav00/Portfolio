@@ -95,7 +95,7 @@ export const projects = [
       'A responsive music streaming interface inspired by modern music platforms, created to practice frontend development, responsive layouts and interactive UI components.',
     features: [],
     techStack: ['HTML', 'CSS', 'JavaScript', 'React.js'],
-    liveUrl: '#',
+    liveUrl: 'https://ajeetyadav00.github.io/spotify/',
     githubUrl: 'https://github.com/',
     accent: 'from-violet-500 via-indigo-500 to-blue-500',
   },
