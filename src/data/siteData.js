@@ -51,7 +51,7 @@ export const skills = [
   {
     title: 'Programming',
     icon: Terminal,
-    items: ['Java', 'C', 'JavaScript', 'OOP'],
+    items: ['Java', 'C', 'JavaScript'],
   },
   {
     title: 'Database Management',
@@ -66,7 +66,7 @@ export const skills = [
   {
     title: 'Core Computer Science',
     icon: Globe,
-    items: ['DBMS', 'Operating Systems', 'Data Structures', 'OOP'],
+    items: ['DBMS', 'Operating Systems', 'Data Structures'],
   },
 ]
 

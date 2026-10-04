@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import {
-  ArrowUp,
   BriefcaseBusiness,
   Code2,
   Mail,
@@ -11,6 +10,7 @@ import {
 } from 'lucide-react'
 import './App.css'
 import { aboutFeatures, navItems, projects, skills, socialLinks } from './data/siteData'
+import profileImage from './assets/image.png'
 
 const initialForm = {
   name: '',
@@ -162,30 +162,40 @@ function App() {
       <main>
         <section id="home" className="section hero-section">
           <div className="container hero-content reveal">
-            <div className="hero-copy">
-              <p className="eyebrow">HI, I'M</p>
-              <h1>
-                <span className="gradient-text">Ajeet Yadav</span>
-              </h1>
-              <p className="hero-subtitle">
-                Frontend Developer &amp; Full Stack Developer — Building modern, responsive and scalable web applications.
-              </p>
-              <div className="cta-row">
-                <a href="#projects" className="primary-btn">
-                  View Projects
-                </a>
-                <a
-                  href="/Ajeet_Yadav_Resume.pdf"
-                  className="secondary-btn"
-                  target="_blank"
-                  rel="noreferrer"
-                  download="Ajeet_Yadav_Resume.pdf"
-                >
-                  Download Resume
-                </a>
+            <div className="hero-layout">
+              <div className="hero-visual" aria-label="Ajeet Yadav profile photo section">
+                <div className="photo-frame">
+                  <img
+                    src={profileImage}
+                    alt="Ajeet Yadav portrait"
+                  />
+                </div>
+              </div>
+
+              <div className="hero-copy">
+                <p className="eyebrow">HI, I'M</p>
+                <h1>
+                  <span className="gradient-text">Ajeet Yadav</span>
+                </h1>
+                <p className="hero-subtitle">
+                  Full Stack Developer — Crafting modern, responsive, and scalable digital experiences.
+                </p>
+                <div className="cta-row">
+                  <a href="#projects" className="primary-btn">
+                    View Projects
+                  </a>
+                  <a
+                    href="/Ajeet_Yadav_Resume.pdf"
+                    className="secondary-btn"
+                    target="_blank"
+                    rel="noreferrer"
+                    download="Ajeet_Yadav_Resume.pdf"
+                  >
+                    Download Resume
+                  </a>
+                </div>
               </div>
             </div>
-
           </div>
         </section>
 
@@ -194,9 +204,9 @@ function App() {
             <h2 className="timeline-title">About Me</h2>
 
             <div className="about-card">
-              <p>I'm a Computer Science Engineering student and aspiring Frontend / Full Stack Developer who enjoys building modern, responsive and user-friendly web applications.</p>
-              <p>I have experience working with frontend technologies such as HTML, CSS, JavaScript, React.js and Tailwind CSS, along with backend technologies including Node.js, Express.js and MongoDB.</p>
-              <p>I enjoy learning new technologies, solving problems and turning ideas into practical web applications.</p>
+              <p>I’m a Full-Stack Developer with a B.Tech in Computer Science Engineering, passionate about building modern, responsive, and user-friendly web applications.</p>
+              <p>I work with React.js, JavaScript, Tailwind CSS, Node.js, Express.js, and MongoDB to develop complete frontend-to-backend solutions.</p>
+              <p>I enjoy solving real-world problems, writing clean code, and continuously learning new technologies to build reliable and impactful digital solutions.</p>
             </div>
           </div>
         </section>
@@ -415,21 +425,6 @@ function App() {
         </section>
       </main>
 
-      <footer className="site-footer">
-        <div className="container footer-inner">
-          <p>© 2026 Ajeet Yadav. All rights reserved.</p>
-          <div className="footer-links">
-            {socialLinks.map(({ label, href, icon: Icon }) => (
-              <a key={label} href={href} target="_blank" rel="noreferrer">
-                {label}
-              </a>
-            ))}
-          </div>
-        </div>
-        <a href="#home" className="back-to-top" aria-label="Back to top">
-          <ArrowUp size={18} />
-        </a>
-      </footer>
     </div>
   )
 }
