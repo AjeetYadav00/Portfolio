@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import {
-  BriefcaseBusiness,
   Code2,
   Mail,
   Menu,
@@ -9,7 +9,7 @@ import {
   X,
 } from 'lucide-react'
 import './App.css'
-import { aboutFeatures, navItems, projects, skills, socialLinks } from './data/siteData'
+import { navItems, projects, skills, socialLinks } from './data/siteData'
 import profileImage from './assets/image.png'
 
 const initialForm = {
@@ -19,6 +19,7 @@ const initialForm = {
 }
 
 function App() {
+  const { pathname } = useLocation()
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light')
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
@@ -52,6 +53,15 @@ function App() {
 
     return () => observer.disconnect()
   }, [])
+
+  useEffect(() => {
+    const sectionId = pathname === '/' ? 'home' : pathname.slice(1)
+    const section = document.getElementById(sectionId)
+
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' })
+    }
+  }, [pathname])
 
   const handleThemeToggle = () => {
     setTheme((prev) => (prev === 'light' ? 'dark' : 'light'))
@@ -102,20 +112,20 @@ function App() {
     <div className="portfolio-shell">
       <header className="topbar">
         <div className="container nav-wrapper">
-          <a href="#home" className="brand" aria-label="Ajeet Yadav home">
+          <Link to="/home" className="brand" aria-label="Ajeet Yadav home">
             <span className="brand-text">Ajeet</span>
             <span className="brand-accent">Yadav</span>
-          </a>
+          </Link>
 
           <nav className="desktop-nav" aria-label="Main navigation">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.href}
-                href={item.href}
-                className={activeSection === item.href.replace('#', '') ? 'nav-link active' : 'nav-link'}
+                to={item.href}
+                className={activeSection === item.href.slice(1) ? 'nav-link active' : 'nav-link'}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -145,14 +155,14 @@ function App() {
           <div className="mobile-nav-panel">
             <nav className="mobile-nav" aria-label="Mobile navigation">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.href}
-                  href={item.href}
-                  className={activeSection === item.href.replace('#', '') ? 'mobile-link active' : 'mobile-link'}
+                  to={item.href}
+                  className={activeSection === item.href.slice(1) ? 'mobile-link active' : 'mobile-link'}
                   onClick={handleNavClick}
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
             </nav>
           </div>
@@ -181,11 +191,11 @@ function App() {
                   Full Stack Developer — Crafting modern, responsive, and scalable digital experiences.
                 </p>
                 <div className="cta-row">
-                  <a href="#projects" className="primary-btn">
+                  <Link to="/projects" className="primary-btn">
                     View Projects
-                  </a>
+                  </Link>
                   <a
-                    href="/Ajeet_Yadav_Resume.pdf"
+                    href={`${import.meta.env.BASE_URL}Ajeet_Yadav_Resume.pdf`}
                     className="secondary-btn"
                     target="_blank"
                     rel="noreferrer"

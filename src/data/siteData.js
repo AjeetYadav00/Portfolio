@@ -11,12 +11,12 @@ import {
 } from 'lucide-react'
 
 export const navItems = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'My Timeline', href: '#timeline' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', href: '/home' },
+  { label: 'About', href: '/about' },
+  { label: 'My Timeline', href: '/timeline' },
+  { label: 'Skills', href: '/skills' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'Contact', href: '/contact' },
 ]
 
 export const aboutFeatures = [

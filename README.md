@@ -14,3 +14,9 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the Oxlint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+
+## Deploying to GitHub Pages
+
+Push to the `main` branch to build and deploy the site with GitHub Actions. In the repository, open **Settings → Pages** and set **Build and deployment → Source** to **GitHub Actions**. The deployed project site is `https://ajeetyadav00.github.io/portfolio/`.
+
+The portfolio uses React Router's `HashRouter` for section navigation, so routes work on GitHub Pages without server-side route configuration (for example, `/#/projects`).
